@@ -1,27 +1,40 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import Card from "../UI/Card";
+import "./ProductItem.css";
 
-import Card from '../UI/Card';
-import './ProductItem.css';
-import { toggleFav } from '../../store/actions/products';
-
-const ProductItem = props => {
-  const dispatch = useDispatch();
-
-  const toggleFavHandler = () => {
-    dispatch(toggleFav(props.id));
-  };
-
+const ProductItem = (props) => {
   return (
-    <Card style={{ marginBottom: '1rem' }}>
+    <Card style={{ marginBottom: "1rem" }}>
       <div className="product-item">
-        <h2 className={props.isFav ? 'is-fav' : ''}>{props.title}</h2>
-        <p>{props.description}</p>
+        <h2 className={props.product.isAdded ? "is-add" : ""}>{props.product.title}</h2>
+        <p>Description: {props.product.description}</p>
+        <p>Price: {props.product.price} Rs</p>
+        <input
+          type="number"
+          min={1}
+          name="quantity"
+          aria-label="quantity"
+          defaultValue={props.product.quantity}
+          style={{ margin: "5px", padding: "5px", width: "50px" }}
+          onChange={(event) => props.handleQuantityChange(props.product.id, event)}
+        />
         <button
-          className={!props.isFav ? 'button-outline' : ''}
-          onClick={toggleFavHandler}
+          className={!props.product.isAdded ? "button-outline" : ""}
+          onClick={() => props.handleAddCart(props.product.id)}
         >
-          {props.isFav ? 'Un-Favorite' : 'Favorite'}
+          {props.product.isAdded ? "Remove from Cart" : "Add to Cart"}
+        </button>
+        <button
+          className={!props.product.isAdded ? "button-outline" : ""}
+          onClick={props.handleCartClick}
+        >
+          Go To Cart
+        </button>
+        <button
+          className={!props.product.isAdded ? "button-outline" : ""}
+          onClick={props.handleBackClick}
+        >
+          Back To Products
         </button>
       </div>
     </Card>

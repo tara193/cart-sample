@@ -3,10 +3,14 @@
   margin: 0.25rem 0;
 }
 
-.product-item h2.is-fav {
+.product-item h2.is-add {
   color: #ff2058;
 }
 
 .product-item p {
   margin: 0.25rem 0;
+}
+.product-item button {
+  margin: 7px;
+  padding: 8px;
 }

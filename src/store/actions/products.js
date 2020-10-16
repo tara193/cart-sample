@@ -1,5 +1,10 @@
-export const TOGGLE_FAV = 'TOGGLE_FAV';
+export const ADD_CART = "ADD_CART";
+export const QUANTITY_CHANGE = "QUANTITY_CHANGE";
 
-export const toggleFav = id => {
-    return { type: TOGGLE_FAV, productId: id };
+export const addToCart = (id) => {
+  return { type: ADD_CART, productId: id };
+};
+
+export const changeQuantity = (id, quantity) => {
+  return { type: QUANTITY_CHANGE, productId: id, productQuantity: quantity };
 };

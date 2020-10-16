@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
 import Navigation from './components/Nav/Navigation';
-import ProductsPage from './containers/Products';
-import FavoritesPage from './containers/Favorites';
+import CartPage from './containers/Cart';
+import ProductItem from './containers/ProductItemContainer';
+import ProductsPage from './containers/ProductListContainer';
 
 const App = props => {
   return (
@@ -11,7 +11,8 @@ const App = props => {
       <Navigation />
       <main>
         <Route path="/" component={ProductsPage} exact />
-        <Route path="/favorites" component={FavoritesPage} />
+        <Route path="/product-item/:id" component={ProductItem} />
+        <Route path="/favorites" component={CartPage} />
       </main>
     </React.Fragment>
   );
