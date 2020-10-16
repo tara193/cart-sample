@@ -5,15 +5,15 @@ import Card from "../components/UI/Card";
 import "./ProductList.css";
 
 const Cart = (props) => {
-  const favoriteProducts = useSelector((state) => state.shop.products.filter((p) => p.isAdded));
+  const cartProducts = useSelector((state) => state.shop.products.filter((p) => p.isAdded));
   const totalPrice = useSelector((state) => state.shop.totalPrice);
   let content = <p className="placeholder">Please do shopping!</p>;
 
-  if (favoriteProducts.length > 0) {
+  if (cartProducts.length > 0) {
     content = (
       <div>
         <ul className="products-list">
-          {favoriteProducts.map((prod) => (
+          {cartProducts.map((prod) => (
             <CartItem
               key={prod.id}
               id={prod.id}

@@ -20,7 +20,7 @@ const ProductItemContainer = (props) => {
   };
 
 
-  const handleCartClick = () => props.history.push("/favorites");
+  const handleCartClick = () => props.history.push("/cart");
 
   const handleBackClick = () => props.history.push("/");
 

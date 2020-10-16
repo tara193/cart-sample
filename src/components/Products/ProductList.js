@@ -6,7 +6,7 @@ const ProductLsit = (props) => {
     <Card style={{ marginBottom: "1rem" }}>
       <div className="product-item">
         <h2
-          className={props.isFav ? "is-fav" : ""}
+          className={props.isAdded ? "is-add" : ""}
           onClick={() => props.handleCardClick(props.id)}
         >
           {props.title}
@@ -21,10 +21,10 @@ const ProductLsit = (props) => {
           onChange={(event) => props.handleQuantityChange(props.id, event)}
         />
         <button
-          className={!props.isFav ? "button-outline" : ""}
+          className={!props.isAdded ? "button-outline" : ""}
           onClick={() => props.handleAddCart(props.id)}
         >
-          {props.isFav ? "Remove from Cart" : "Add to Cart"}
+          {props.isAdded ? "Remove from Cart" : "Add to Cart"}
         </button>
       </div>
     </Card>

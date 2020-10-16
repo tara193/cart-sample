@@ -40,11 +40,11 @@ const initialState = {
 
 const addToCart = (state, action) => {
   const prodIndex = state.products.findIndex((p) => p.id === action.productId);
-  const newFavStatus = !state.products[prodIndex].isAdded;
+  const newAddedStatus = !state.products[prodIndex].isAdded;
   const updatedProducts = [...state.products];
   updatedProducts[prodIndex] = {
     ...state.products[prodIndex],
-    isAdded: newFavStatus,
+    isAdded: newAddedStatus,
   };
   if (updatedProducts[prodIndex].isAdded === true) {
     state.totalPrice = state.totalPrice + (updatedProducts[prodIndex].price * updatedProducts[prodIndex].quantity);

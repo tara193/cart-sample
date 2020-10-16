@@ -25,7 +25,7 @@ const ProductListContainer = (props) => {
         <ProductList
           key={prod.id}
           id={prod.id}
-          isFav={prod.isAdded}
+          isAdded={prod.isAdded}
           title={prod.title}
           quantity={prod.quantity}
           handleCardClick={handleCardClick}

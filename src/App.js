@@ -12,7 +12,7 @@ const App = props => {
       <main>
         <Route path="/" component={ProductsPage} exact />
         <Route path="/product-item/:id" component={ProductItem} />
-        <Route path="/favorites" component={CartPage} />
+        <Route path="/cart" component={CartPage} />
       </main>
     </React.Fragment>
   );
